@@ -1,0 +1,59 @@
+{
+  "name": "fastify-newrelic",
+  "version": "0.0.1",
+  "description": "Fastify plugin for newrelic",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --verbose --detectOpenHandles --forceExit",
+    "test:watch": "jest --verbose --watch",
+    "dev": "nodemon -e ts,.env -w .env -w . -x 'run-s build:ts test'",
+    "build:clean": "rm -rf ./dist",
+    "build:ts": "tsc",
+    "build": "run-s build:clean build:ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/free6k/fastify-newrelic.git"
+  },
+  "keywords": [
+    "fastify",
+    "fastify-plugin",
+    "newrelic"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Salikh Fakhrutdinov <me@free6k>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/free6k/fastify-newrelic/issues"
+  },
+  "homepage": "https://github.com/free6k/fastify-newrelic#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.10",
+    "@types/newrelic": "^6.4.0",
+    "fastify": "^3.0.0",
+    "jest": "^26.4.2",
+    "jest-extended": "^0.11.5",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "ts-jest": "^26.3.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "fastify-plugin": "^2.0.0",
+    "newrelic": "^6.13.0"
+  },
+  "peerDependencies": {
+    "fastify": "^3.0.0"
+  },
+  "jest": {
+    "preset": "ts-jest/presets/js-with-ts",
+    "testEnvironment": "node",
+    "globals": {
+      "NEW_RELIC_NO_CONFIG_FILE": true
+    }
+  }
+}
