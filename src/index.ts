@@ -19,11 +19,11 @@ export interface Config {
 const plugin: FastifyPlugin<Config> = (fastify, opts, next) => {
     const nr: CustomNewRelic = opts.newrelic
 
-    if (!nr) {
-        throw new Error('The newrelic object must be set')
-    }
-
     try {
+        if (!nr) {
+            throw new Error('The newrelic object must be set')
+        }
+
         const getTransactionName = (request: FastifyRequest) => {
             return `${request.routerMethod}${request.routerPath || 'uknown'}`
         }
