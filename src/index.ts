@@ -13,11 +13,15 @@ export interface CustomNewRelic {
 
 export interface Config {
     attributes?: CustomAttributes
-    newrelic?: CustomNewRelic
+    newrelic: CustomNewRelic
 }
 
 const plugin: FastifyPlugin<Config> = (fastify, opts, next) => {
-    const nr: CustomNewRelic = opts.newrelic || require('newrelic')
+    const nr: CustomNewRelic = opts.newrelic
+
+    if (!nr) {
+        throw new Error('The newrelic object must be set')
+    }
 
     try {
         const getTransactionName = (request: FastifyRequest) => {
