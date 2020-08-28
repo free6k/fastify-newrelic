@@ -2,9 +2,9 @@
 ## Installation
 
 ```shell
-$ yarn add fastify-newrelic
+$ yarn add fastify-newrelic@beta
 # or
-$ npm i fastify-newrelic
+$ npm i fastify-newrelic@beta
 ```
 
 ## Usage
