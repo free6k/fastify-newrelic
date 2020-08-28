@@ -1,4 +1,4 @@
-# `fastify-newrelic`
+# `fastify-newrelic` BETA
 ## Installation
 
 ```shell
