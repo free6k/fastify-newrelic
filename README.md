@@ -1,4 +1,7 @@
-# `fastify-newrelic` BETA
+# `fastify-newrelic` DEPRECATED
+
+> The plugin doesn't correctly work. All works except send error notice. Problems has in fastify, because it doens't send stack trace. If are you know how resole it? Open issue or pull request :)
+
 ## Installation
 
 ```shell
